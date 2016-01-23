@@ -90,24 +90,42 @@
         <section id="install">
           <section>
             <h3>Let's Develop It</h3>
-            <p>Let's get PHP running on your machine.<p>
-            <p>PCs: <a href="http://www.wampserver.com/en/download.php">http://www.wampserver.com/en/download.php</a></p>
-            <p>Macs: <a href="http://www.mamp.info/en/downloads/index.html">http://www.mamp.info/en/downloads/index.html</a></p>
-            <p>Test: <a href="http://localhost/">http://localhost/</a>
+            <p>Let's get PHP running on your machine.</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>PCs:</th>
+                        <td nowrap><a href="http://www.wampserver.com/en/download.php">http://www.wampserver.com/en/download.php</a></td>
+                    </tr>
+                    <tr>
+                        <th>Macs:</th>
+                        <td nowrap><a href="http://www.mamp.info/en/downloads/index.html">http://www.mamp.info/en/downloads/index.html</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>Test</strong></p>
+            <p><a href="http://localhost/">http://localhost/</a>
           </section>
           <section>
             <h3>Let's Develop It</h3>
-            <p>Make your first page! Find your www directory. On Windows, the default is C:\wamp\www. On a Mac, it is \Applications\MAMP\htdocs\. Create a new folder, called gdi, and then create a file inside called index.php.</p>
-<pre><code class="html">&lt;!DOCTYPE html&gt;
+            <p> Make your first page!</p>
+            <ol>
+                <li>
+                Find your <code>www</code> directory. On
+                Windows, the default is <code>C:\wamp\www</code>. On a Mac, it is
+                <code>\Applications\MAMP\htdocs\</code>.
+                </li>
+                <li>Create a new folder, called <code>gdi</code></li>
+                <li>Create a file inside called <code>index.php</code>.</li>
+            </ol>
+<pre><code class="php">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;Test Page&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
     &lt;p&gt;
-      &lt;?php
-      echo 'Hello World';
-      ?&gt;
+      &lt;?php echo 'Hello World' ?&gt;
     &lt;/p&gt;
   &lt;/body&gt;
 &lt;/html&gt;
@@ -154,13 +172,20 @@
           <section>
             <h3>PHP Tags</h3>
             <p>You can mix PHP and HTML. When a PHP server looks at a page, it only pays attention to code within the PHP tags.</p>
-<pre><code class="html">&lt;?php CODE GOES HERE  ?&gt;
+<pre><code class="php">&lt;p&gt;This is regular HTML&lt;/p&gt;
+
+&lt;?php echo "The server will process this as PHP" ?&gt;
+
+&lt;p&gt;This is regular HTML again!&lt;/p&gt;
 </code></pre>
           </section>
           <section>
             <h3>Separating Instructions</h3>
-            <p>After each individual statement, you must add a semicolon.</p>
-<pre><code class="php">echo 'Hello World!';
+            <p>If your code has more than one statement, you must add a
+            semicolon at the end of each one.</p>
+<pre><code class="php">&lt;?php
+
+echo 'Hello World!';
 echo 'I am glad to meet you';
 echo 'I am fuzzy';
 </code></pre>
@@ -168,7 +193,9 @@ echo 'I am fuzzy';
           <section>
             <h3>Comments</h3>
             <p>You can leave comments in your code&mdash;notes that people can read and computers will ignore.</p>
-<pre><code class="php">/*I can wrap long comments
+<pre><code class="php">&lt;?php
+
+/*I can wrap long comments
 with multiple lines
 like this*/
 echo 'Hello World!'; //Or mark short comments like this
@@ -200,22 +227,29 @@ echo 'Hello World!'; //Or mark short comments like this
               <li>The variable name is case-sensitive.</li>
               <li>A new variable needs to have a unique name.</li>
               <li>Variable names need to start with a letter or underscore.</li>
-              <li>Variable names can only be made of letters and numbers.</li>
+              <li>Variable names can only be made of letters, numbers, and
+              underscores.</li>
             </ul>
           </section>
           <section>
             <h3>Creating a Variable</h3>
             <p>To create a variable, just type a dollar sign and the variable name. PHP will create the variable for you.</p>
-<pre><code class="php">$numberOfKittens;
+<pre><code class="php">&lt;?php
+
+$numberOfKittens;
 </code></pre>
             <p>It is a good idea to give your variable a starting value. This is called initializing the variable.</p>
-<pre><code class="php">$numberOfKittens = 5;
+<pre><code class="php">&lt;?php
+
+$numberOfKittens = 5;
 </code></pre>
           </section>
           <section>
             <h3>Using a Variable</h3>
             <p>Once you have created a variable, you can use it in your code. Just type a dollar sign and the name of the variable</p>
-<pre><code class="php">$numberOfKittens = 5;
+<pre><code class="php">&lt;?php
+
+$numberOfKittens = 5;
 echo $numberOfKittens;
 </code></pre>
           </section>
@@ -235,9 +269,11 @@ echo $numberOfKittens;
           </section>
           <section>
             <h3>Numbers</h3>
-            <p>Variable can be numbers, either integers or floats (decimals).</p>
-<pre><code class="php">$numberOfKittens = 5;
-$cutenessRating = 9.6;
+            <p>Variables can be numbers: either integers (whole numbers) or floats (decimals).</p>
+<pre><code class="php">&lt;?php
+
+$numberOfKittens = 5;  // integer
+$cutenessRating = 9.6; // float
 </code></pre>
             <p>PHP will automatically convert integers to floats if needed</p>
           </section>
@@ -245,7 +281,9 @@ $cutenessRating = 9.6;
           <section>
             <h3>Arithmetic Operators</h3>
             <p>Once you have numbers, you can do math with them!</p>
-<pre><code class="php">$numberOfKittens = 5;
+<pre><code class="php">&lt;?php
+
+$numberOfKittens = 5;
 $numberOfPuppies = 4;
 $numberOfAnimals = $numberOfKittens + $numberOfPuppies;
 </code></pre>
@@ -262,34 +300,34 @@ $numberOfAnimals = $numberOfKittens + $numberOfPuppies;
               </thead>
               <tbody>
                 <tr>
-                 <td>-$a</td>
+                 <td><code>-$a</code></td>
                  <td>Negation</td>
-                 <td>Opposite of $a.</td>
+                 <td>Opposite of <code>$a</code>.</td>
                 </tr>
                 <tr>
-                 <td>$a + $b</td>
+                 <td><code>$a + $b</code></td>
                  <td>Addition</td>
-                 <td>Sum of $a and $b.</td>
+                 <td>Sum of <code>$a</code> and <code>$b</code>.</td>
                 </tr>
                 <tr>
-                 <td>$a - $b</td>
+                 <td><code>$a - $b</code></td>
                  <td>Subtraction</td>
-                 <td>Difference of $a and $b.</td>
+                 <td>Difference of <code>$a</code> and <code>$b</code>.</td>
                 </tr>
                 <tr>
-                 <td>$a * $b</td>
+                 <td><code>$a * $b</code></td>
                  <td>Multiplication</td>
-                 <td>Product of $a and $b.</td>
+                 <td>Product of <code>$a</code> and <code>$b</code>.</td>
                 </tr>
                 <tr>
-                 <td>$a / $b</td>
+                 <td><code>$a / $b</code></td>
                  <td>Division</td>
-                 <td>Quotient of $a and $b.</td>
+                 <td>Quotient of <code>$a</code> and <code>$b</code>.</td>
                 </tr>
                 <tr>
-                 <td>$a % $b</td>
+                 <td><code>$a % $b</code></td>
                  <td>Modulus</td>
-                 <td>Remainder of $a divided by $b.</td>
+                 <td>Remainder of <code>$a</code> divided by <code>$b</code>.</td>
                 </tr>
               </tbody>
             </table>
@@ -304,11 +342,15 @@ $numberOfAnimals = $numberOfKittens + $numberOfPuppies;
         <section>
           <section>
             <h3>Strings</h3>
-            <p>Variable can be strings, groups of characters. You put your string in quotes.</p>
-<pre><code class="php">$kittensName = 'Fluffy';
+            <p>Variables can be strings, groups of characters. You put your string in quotes.</p>
+<pre><code class="php">&lt;?php
+
+$kittensName = 'Fluffy';
 </code></pre>
             <p>If you want to use a quote in your string, you'll need to "escape" it with a backslash.</p>
-<pre><code class="php">echo 'I\'d like to use an apostrophe';
+<pre><code class="php">&lt;?php
+
+echo 'I\'d like to use an apostrophe';
 </code></pre>
           </section>
           <section>
@@ -319,17 +361,21 @@ $numberOfAnimals = $numberOfKittens + $numberOfPuppies;
           <section>
             <h3>String Operators</h3>
             <p>You can put strings together with a period, the concatenation operator.</p>
-<pre><code class="php">$kittensName = 'Fluffy';
+<pre><code class="php">&lt;?php
+
+$kittensName = 'Fluffy';
 $fullName = $kittensName . ' McDougle';
-echo $fullName; //Outputs 'Fluffy McDougle'
+echo $fullName; // Prints 'Fluffy McDougle'
 </code></pre>
           </section>
           <section>
             <h3>String Operators</h3>
-            <p>You can also use .= to add things to the end of a string.</p>
-<pre><code class="php">$kittensName = 'Admiral';
+            <p>You can also use <code>.=</code> to add things to the end of a string.</p>
+<pre><code class="php">&lt;?php
+
+$kittensName = 'Admiral';
 $kittensName .= ' Snuggles';
-echo $kittensName; //Outputs 'Admiral Snuggles'
+echo $kittensName; // Prints 'Admiral Snuggles'
 </code></pre>
           </section>
           <section>
@@ -354,42 +400,52 @@ echo $kittensName; //Outputs 'Admiral Snuggles'
           <section>
             <h3>Using Functions</h3>
             <p>First, declare the function.</p>
-<pre><code class="php">function turtleFact() {
+<pre><code class="php">&lt;?php
+
+function turtleFact() {
   echo 'A turtle\'s lower shell is called plastron.';
 }
 </code></pre>
             <p>Then, use it as many times as you want!</p>
-<pre><code class="php">turtleFact();
+<pre><code class="php">&lt;?php
+
+turtleFact(); // Prints "A turtle's lower shell is called plastron"
+turtleFact(); // Prints "A turtle's lower shell is called plastron"
+turtleFact(); // Prints "A turtle's lower shell is called plastron"
 </code></pre>
           </section>
         <section>
           <h3>Arguments</h3>
           <p>Functions can accept input values, called arguments.</p>
-<pre><code class="php">function callKitten ($kittenName){
+<pre><code class="php">&lt;?php
+
+function callKitten ($kittenName){
   echo 'Come here, ' . $kittenName . '!';
 }
-callKitten ('Fluffy'); //outputs 'Come here, Fluffy!'
+callKitten ('Fluffy'); // Prints 'Come here, Fluffy!'
 
 function addNumbers($a, $b) {
   echo $a + $b;
 }
-addNumbers(5,7); //outputs 12
-addNumbers(9,12); //outputs 21
+addNumbers(5,7);  // Prints 12
+addNumbers(9,12); // Prints 21
 </code></pre>
         </section>
         <section>
           <h3>Arguments</h3>
           <p>You can also pass variables into functions. These variables do not need to have the same name as the function arguments.</p>
-<pre><code class="php">function addOne($inputNumber){
+<pre><code class="php">&lt;?php
+
+function addOne($inputNumber){
   $newNumber = $inputNumber + 1;
   echo '&lt;p&gt;You now have ' . $newNumber . '&lt;/p&gt;';
 }
 
-//Declare variables
+// Declare variables
 $numberOfKittens = 5;
 $numberOfPuppies = 4;
 
-//Use them in functions
+// Use them in functions
 addOne($numberOfKittens);
 addOne($numberOfPuppies);
 </code></pre>
@@ -405,11 +461,17 @@ addOne($numberOfPuppies);
         <section>
           <h3>Returning Values</h3>
           <p>You can have a function give you back a value, to use later.</p>
-<pre><code class="php">function square($num) {
+<pre><code class="php">&lt;?php
+
+function square($num) {
   return $num * $num;
 }
-echo square(4);   // outputs '16'.
-$squareOfFive = square(5); // will make $squareOfFive equal 25.
+
+// Print '16'
+echo square(4);
+
+// Set $squareOfFive to 25.
+$squareOfFive = square(5);
 </code></pre>
           <p>Return will immediately end a function.</p>
         </section>
