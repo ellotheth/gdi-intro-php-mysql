@@ -220,42 +220,82 @@ echo 'Hello World!'; //Or mark single-line comments like this
           <section>
             <h3>Variable Values</h3>
             <ul>
-              <li>When you first create a variable, it does not have a value (it is null).</li>
-              <li>You can set a value for a variable.</li>
-              <li>Variables can hold different types of information, like words, numbers, and collections of data.</li>
+              <li>When you first create a variable, it does not hold any
+              information
+              (the value is <code>NULL</code>).</li>
+              <li>If you want to use a variable, you must give it information
+              to hold (a value).</li>
+              <li>Values can be different types of information, like words, numbers, and collections of data.</li>
               <li>The value of a variable can change over time.</li>
             </ul>
           </section>
           <section>
             <h3>Naming Variables</h3>
-            <ul>
-              <li>In PHP, you write a variable with a dollar sign followed by the name of the variable.</li>
-              <li>The variable name is case-sensitive.</li>
-              <li>A new variable needs to have a unique name.</li>
-              <li>Variable names need to start with a letter or underscore.</li>
-              <li>Variable names can only be made of letters, numbers, and
-              underscores.</li>
-            </ul>
+              <p>In PHP, you write a variable with a dollar sign (followed by the name of the variable.</p>
+<pre><code class="php">&lt;?php
+
+$myVariable;
+</code></pre>
+              <p>The variable name is case-sensitive.</p>
+<pre><code class="php">&lt;?php
+
+$myVariable; // is not the same as
+$MyVariable;
+</code></pre>
+              <p>Different variables must have unique names.</p>
+<pre><code class="php">&lt;?php
+
+$myVariable; // is the same as
+$myVariable;
+</code></pre>
+          </section>
+          <section>
+            <h3>Naming Variables</h3>
+              <p>Variable names can only be made of letters, numbers, and
+              underscores.</p>
+<pre><code class="php">&lt;?php
+
+$this-variable-name-is-invalid;
+$NoPunctuationAllowed!;
+$this_one_is_ok;
+$SoIsThis1;
+</code></pre>
+              <p>Variable names need to start with a letter or underscore.</p>
+<pre><code class="php">&lt;?php
+
+$LettersCanBeUpperCase;
+$orLowerCase;
+$_underscoresAreFineToo;
+$123_but_not_numbers;
+</code></pre>
           </section>
           <section>
             <h3>Creating a Variable</h3>
-            <p>To create a variable, just type a dollar sign and the variable name. PHP will create the variable for you.</p>
+            <p>To create a variable, type a dollar sign and the variable name.</p>
 <pre><code class="php">&lt;?php
 
 $numberOfKittens;
 </code></pre>
-            <p>It is a good idea to give your variable a starting value. This is called initializing the variable.</p>
+            <p>
+            If you want to use the variable, you must <em><strong>initialize
+                    it</strong></em>, or give it a value, with the
+            <code>=</code> sign.
+            </p>
 <pre><code class="php">&lt;?php
 
+// Assign the number 5 to the variable $numberOfKittens
 $numberOfKittens = 5;
 </code></pre>
           </section>
           <section>
             <h3>Using a Variable</h3>
-            <p>Once you have created a variable, you can use it in your code. Just type a dollar sign and the name of the variable</p>
+            <p>Once you initialize a variable with a value, you can use it in your code instead of the value.</p>
 <pre><code class="php">&lt;?php
 
+// I have 5 kittens
 $numberOfKittens = 5;
+
+// Print the number of kittens I have
 echo $numberOfKittens;
 </code></pre>
           </section>
