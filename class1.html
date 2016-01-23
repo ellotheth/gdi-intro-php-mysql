@@ -181,24 +181,30 @@
           </section>
           <section>
             <h3>Separating Instructions</h3>
-            <p>If your code has more than one statement, you must add a
-            semicolon at the end of each one.</p>
+            <p>
+            If the code inside your PHP tags has more than one statement, you must add a
+            semicolon at the end of each one.
+            </p>
+            <p><strong>Single statements:</strong></p>
+            <pre><code class="php">&lt;?php echo 'Hello World!' ?&gt;
+&lt;?php echo 'I am glad to meet you' ?&gt;
+</code></pre>
+            <p><strong>Multiple statements:</strong></p>
 <pre><code class="php">&lt;?php
 
 echo 'Hello World!';
 echo 'I am glad to meet you';
-echo 'I am fuzzy';
 </code></pre>
           </section>
           <section>
             <h3>Comments</h3>
-            <p>You can leave comments in your code&mdash;notes that people can read and computers will ignore.</p>
+            <p>You can leave comments in your code&mdash;notes that people can read and servers will ignore.</p>
 <pre><code class="php">&lt;?php
 
 /*I can wrap long comments
 with multiple lines
 like this*/
-echo 'Hello World!'; //Or mark short comments like this
+echo 'Hello World!'; //Or mark single-line comments like this
 </code></pre>
           </section>
         </section>
